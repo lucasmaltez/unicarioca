@@ -1,0 +1,425 @@
+//DESENVOLVIDO POR: LUCAS GOMES RIOS MALTEZ
+
+//DATA: 07/09/2023.
+
+//SISTEMA DE ESCOLHAS PARA DIVERSAS FUNCOES E OPERACOES.
+
+//EXERCICIO PARA INICIACAO A PROGRAMACAO.
+
+
+
+#include<stdio.h>
+
+#include<math.h>
+
+#define fixo 2
+
+int main(){
+
+    char nome[100];
+
+    int opcao;
+
+    
+
+    printf("Qual o usuario: \n");
+
+    scanf("%s", &nome);
+
+    
+
+    printf("Seja Bem Vindo, %s !!", nome);
+
+
+
+    do{
+
+
+
+    
+
+        printf("O que deseja fazer: \n\n");
+
+        printf("\n1) Calculadora.");
+
+        printf("\n2) Fatoramento.");
+
+        printf("\n3) Divisivel.");
+
+        printf("\n4) Tabuada.");
+
+        printf("\n5) Potencia.");
+
+        printf("\n6) Indice de Massa Corporal.");
+
+        printf("\n7) Temperatura.");
+
+        printf("\n8)Sair.\n");
+
+
+
+        printf("\nEscolha uma das opcoes:");
+
+        scanf("%i", &opcao);
+
+        switch (opcao)
+
+        {
+
+            case 1:
+
+            
+
+                int op, n1, n2, result;
+
+                float num1,num2, resu;
+
+                printf("Bem Vindo a sua calculadora particular!\n\n");
+
+    
+
+                do
+
+            {
+
+                    printf("\n\n1) somar\n");
+
+                    printf("2) subtrair\n");
+
+                    printf("3) dividir\n");
+
+                    printf("4) multiplicar\n");
+
+                    printf("5) sair\n");
+
+
+
+                    printf("Escolha uma das opcoes:");
+
+                    scanf("%i",&op);
+
+     
+
+                switch(op)
+
+                {
+
+                    
+
+                case 1:
+
+                    printf("Digite um numero para X:\n");
+
+                    scanf("%i", &n1);
+
+                    printf("Digite um numero para Y:\n");
+
+                    scanf("%i", &n2);
+
+                    result= n1+n2;
+
+                    printf("o Resultado eh:%i", result);
+
+                    break;
+
+                case 2:
+
+                    printf("Digite um numero para X:\n");
+
+                    scanf("%i", &n1);
+
+                    printf("Digite um numero para Y:\n");
+
+                    scanf("%i", &n2);
+
+                    result= n1-n2;
+
+                    printf("o Resultado eh:%i", result);
+
+                    break;
+
+                case 3:
+
+                    printf("Digite um numero para X:\n");
+
+                    scanf("%f", &num1);
+
+                    printf("Digite um numero para Y:\n");
+
+                    scanf("%f", &num2);
+
+                    resu= num1/num2;
+
+                    printf("o Resultado eh:%.2f", resu);
+
+                    break;
+
+                case 4:
+
+                    printf("Digite um numero para X:\n");
+
+                    scanf("%f", &num1);
+
+                    printf("Digite um numero para Y:\n");
+
+                    scanf("%f", &num2);
+
+                    resu= num1*num2;
+
+                    printf("o Resultado eh:%.2f", resu);
+
+                    break;
+
+                }
+
+            }while(op!=5);
+
+        
+
+                break;
+
+                
+
+                case 2:
+
+            
+
+                     int fat, num;
+
+            
+
+                        printf("Digite um valor para fatorar maior do que 0: ");
+
+                        scanf("%d", &num);
+
+            
+
+                        while(num<0){
+
+            
+
+                        printf("\nNumero invalido.\n");
+
+                        printf("\nDigite novamente um numero: ");
+
+                        scanf("%d", &num);
+
+        
+
+                    }
+
+
+
+                        for (fat = 1; num > 1; num = num - 1)
+
+                    {
+
+                        fat= fat * num;
+
+                    }
+
+                        printf("\nO resultado do fatorial eh: %d", fat);
+
+                break;
+
+                
+
+                case 3:
+
+                    
+
+                            int nu1, nu2, div;
+
+                    
+
+                            printf("\nDigite um numero para X:");
+
+                            scanf("%i", &nu1);
+
+                    
+
+                            printf("\nDigite um numero para Y:");
+
+                            scanf("%i", &nu2);
+
+                    
+
+                            div= nu1%nu2;
+
+                    
+
+                            if (div==0 )
+
+                    printf("\nEle eh divisivel.");
+
+                    else
+
+                    printf("\nEle nao eh divisivel.");
+
+                
+
+                break;
+
+
+
+                case 4:
+
+                    
+
+                    int nume1, i, resultado;
+
+    
+
+                    printf("Digite um numere para descobrir a tabuada dele: ");
+
+                    scanf("%i", &nume1);
+
+    
+
+                    for (i=0; i<11; i++)
+
+                    {
+
+                        resultado= nume1*i;
+
+                        printf("%dx%d: %d\n ",nume1, i, resultado );
+
+
+
+                    }
+
+                break;
+
+                
+
+                case 5:
+
+                    
+
+                    int pot, res;
+
+    
+
+                    printf("\nDigite um numere que sera a potencia: ");
+
+                    scanf("%i", &pot);
+
+    
+
+                    res = pow(pot,fixo);
+
+                    printf("\nO numero elevado a potencia eh: %i", res);
+
+                
+
+                break;
+
+
+
+                case 6:
+
+
+
+                    float peso, altura, imc;
+
+                    
+
+                    printf("\nDiga sua altura: ");
+
+                    scanf("%f", &altura);
+
+                    
+
+                    printf("\nDiga seu peso: ");
+
+                    scanf("%f", &peso);
+
+                    
+
+                    imc= peso/(altura*2);
+
+                    
+
+                    printf("O IMC eh: %.2f", imc);
+
+                break;
+
+                
+
+                case 7:
+
+                
+
+                    int graus;
+
+                    float celsius, fahrenheit;
+
+                    printf("Como deseja a temperatura:");
+
+                    do{
+
+
+
+                        printf("\n1) Celsius para Fahrenheit.");
+
+                        printf("\n2) Fahrenheit para Celsius.");
+
+                        printf("\n3) Sair");
+
+                        printf("\nEscolha uma das opcoes:");
+
+                        scanf("%i", &graus);
+
+                        switch (graus)
+
+                        {
+
+                            case 1:
+
+
+
+                            printf("\nDigite a temperatura em graus Celsius: ");
+
+                            scanf("%f", &celsius);
+
+                            fahrenheit = (celsius * 9/5)+32;
+
+                            printf("\nA temperatura em fahrenheit eh: %.2f\n", fahrenheit);
+
+                            break;
+
+                            
+
+                            case 2:
+
+                            printf("\nDigite a temperatura em Fahrenheit: ");
+
+                            scanf("%f", &fahrenheit);
+
+                            celsius = (fahrenheit-32)/1.8;
+
+                            printf("\nA temperatura em Celsius eh: %.2f\n", celsius);
+
+                            break;
+
+                        
+
+                        }
+
+                           
+
+                           
+
+                    }while(graus!=3);
+
+
+
+
+
+        }
+
+    }while(opcao!=8);
+
+return 0;
+
+}
